@@ -1,0 +1,344 @@
+openapi: 3.0.3
+info:
+  title: TruVideo Platform Authentication Repair Orders API
+  version: v2
+  description: 'REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo''s published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.'
+  contact:
+    name: TruVideo Developer Team
+    email: devmgr+git@truvideo.com
+    url: https://truvideo.com/software-partnerships/
+  x-generated-by: api-evangelist-enrichment
+  x-source: https://github.com/Truvideo/Documentation
+servers:
+- url: https://app.truvideo.com
+  description: Production
+- url: https://dev.truvideo.com
+  description: Sandbox / test (requires a TruVideo Sandbox account; may be gated)
+security:
+- bearerAuth: []
+tags:
+- name: Repair Orders
+paths:
+  /api/v2/{accountId}/repair-order/{orderId}:
+    get:
+      tags:
+      - Repair Orders
+      operationId: getRepairOrder
+      summary: Get order by id
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: The repair order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepairOrder'
+        '404':
+          description: Order not found
+  /api/v2/{accountId}/repair-order/status/{statusKey}:
+    get:
+      tags:
+      - Repair Orders
+      operationId: listRepairOrdersByStatus
+      summary: Get orders by status
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      - name: statusKey
+        in: path
+        required: true
+        schema:
+          type: string
+          example: STATUS_SENT
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/size'
+      responses:
+        '200':
+          description: Paged repair orders
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Page'
+                - type: object
+                  properties:
+                    content:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/RepairOrder'
+  /api/v2/{accountId}/repair-order:
+    post:
+      tags:
+      - Repair Orders
+      operationId: createRepairOrder
+      summary: Create order
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - number
+              - customerName
+              - mobileNumber
+              properties:
+                number:
+                  type: string
+                customerName:
+                  type: string
+                customerLastName:
+                  type: string
+                mobileNumber:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                sendNotifications:
+                  type: boolean
+      responses:
+        '200':
+          description: Created repair order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepairOrder'
+  /api/v2/{accountId}/repair-order/{repairOrderId}:
+    put:
+      tags:
+      - Repair Orders
+      operationId: updateRepairOrder
+      summary: Update order
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      - name: repairOrderId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerName:
+                  type: string
+                customerLastName:
+                  type: string
+                mobileNumber:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                serviceAdvisor:
+                  type: integer
+                  format: int64
+      responses:
+        '200':
+          description: Updated repair order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepairOrder'
+  /api/v2/{accountId}/repair-order/search:
+    get:
+      tags:
+      - Repair Orders
+      operationId: searchRepairOrders
+      summary: Search orders
+      description: Search orders by a term compared against customer first/last name, job service number and dealer name; optionally filtered by a creation-date interval and status.
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      - name: searchTerm
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          type: string
+          example: STATUS_NEW
+      - name: creationDateFrom
+        in: query
+        schema:
+          type: integer
+          format: int64
+          description: Epoch millis
+      - name: creationDateTo
+        in: query
+        schema:
+          type: integer
+          format: int64
+          description: Epoch millis
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/size'
+      responses:
+        '200':
+          description: Paged repair orders
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Page'
+                - type: object
+                  properties:
+                    content:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/RepairOrder'
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstName:
+          type: string
+        lastName:
+          type: string
+        mobileNumber:
+          type: string
+        mobileStatus:
+          type: string
+          example: Valid
+        email:
+          type: string
+          format: email
+    Dealer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
+        phone:
+          type: string
+        supportNumber:
+          type: string
+        partner:
+          type: integer
+        distributor:
+          type: string
+          nullable: true
+        timeZone:
+          type: string
+    Advisor:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstName:
+          type: string
+          nullable: true
+        lastName:
+          type: string
+          nullable: true
+        title:
+          type: string
+        mobileNumber:
+          type: string
+        email:
+          type: string
+          format: email
+          nullable: true
+        status:
+          type: string
+    Page:
+      type: object
+      description: Spring-style pagination envelope wrapping a content array.
+      properties:
+        totalPages:
+          type: integer
+        totalElements:
+          type: integer
+        last:
+          type: boolean
+        first:
+          type: boolean
+        size:
+          type: integer
+        number:
+          type: integer
+        numberOfElements:
+          type: integer
+        sort:
+          type: object
+          nullable: true
+    RepairOrder:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        number:
+          type: string
+        status:
+          type: string
+        repairCondition:
+          type: string
+          nullable: true
+        originalAmount:
+          type: number
+          nullable: true
+        creationDate:
+          type: integer
+          format: int64
+          description: Epoch millis
+        updateDate:
+          type: integer
+          format: int64
+          description: Epoch millis
+        dealer:
+          $ref: '#/components/schemas/Dealer'
+        advisor:
+          $ref: '#/components/schemas/Advisor'
+        customer:
+          $ref: '#/components/schemas/Customer'
+  parameters:
+    size:
+      name: size
+      in: query
+      required: false
+      description: Records per page (default 25).
+      schema:
+        type: integer
+        default: 25
+    page:
+      name: page
+      in: query
+      required: false
+      description: Zero-based page number (default 0).
+      schema:
+        type: integer
+        default: 0
+    accountId:
+      name: accountId
+      in: path
+      required: true
+      description: Dealer / account id. Present on all account-scoped requests.
+      schema:
+        type: integer
+        format: int64
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT bearer token obtained from POST /api/v2/authentication/login.

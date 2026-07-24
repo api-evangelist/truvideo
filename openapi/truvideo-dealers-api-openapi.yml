@@ -1,0 +1,56 @@
+openapi: 3.0.3
+info:
+  title: TruVideo Platform Authentication Dealers API
+  version: v2
+  description: 'REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo''s published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.'
+  contact:
+    name: TruVideo Developer Team
+    email: devmgr+git@truvideo.com
+    url: https://truvideo.com/software-partnerships/
+  x-generated-by: api-evangelist-enrichment
+  x-source: https://github.com/Truvideo/Documentation
+servers:
+- url: https://app.truvideo.com
+  description: Production
+- url: https://dev.truvideo.com
+  description: Sandbox / test (requires a TruVideo Sandbox account; may be gated)
+security:
+- bearerAuth: []
+tags:
+- name: Dealers
+paths:
+  /api/v2/{accountId}/dealer/repairCondition:
+    get:
+      tags:
+      - Dealers
+      operationId: getDealerRepairCondition
+      summary: Get repair condition
+      description: Gets whether the repair-condition feature is enabled for a dealer.
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      responses:
+        '200':
+          description: Repair condition flag
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  enabled:
+                    type: boolean
+components:
+  parameters:
+    accountId:
+      name: accountId
+      in: path
+      required: true
+      description: Dealer / account id. Present on all account-scoped requests.
+      schema:
+        type: integer
+        format: int64
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT bearer token obtained from POST /api/v2/authentication/login.

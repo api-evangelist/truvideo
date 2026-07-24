@@ -1,0 +1,82 @@
+openapi: 3.0.3
+info:
+  title: TruVideo Platform Authentication Reports API
+  version: v2
+  description: 'REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo''s published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.'
+  contact:
+    name: TruVideo Developer Team
+    email: devmgr+git@truvideo.com
+    url: https://truvideo.com/software-partnerships/
+  x-generated-by: api-evangelist-enrichment
+  x-source: https://github.com/Truvideo/Documentation
+servers:
+- url: https://app.truvideo.com
+  description: Production
+- url: https://dev.truvideo.com
+  description: Sandbox / test (requires a TruVideo Sandbox account; may be gated)
+security:
+- bearerAuth: []
+tags:
+- name: Reports
+paths:
+  /api/v2/{accountId}/reports/export/dealer-bible:
+    post:
+      tags:
+      - Reports
+      operationId: exportDealerBible
+      summary: Export Dealer Bible CSVs
+      description: Exports orders in a time range for the given dealers as CSVs to the configured SFTP server.
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dateFrom:
+                  type: integer
+                  format: int64
+                dateTo:
+                  type: integer
+                  format: int64
+                definition:
+                  type: string
+                  example: DEFAULT
+                dealers:
+                  type: array
+                  items:
+                    type: integer
+                    format: int64
+      responses:
+        '200':
+          description: Export triggered
+  /api/v2/{accountId}/reports/import/authenticom:
+    post:
+      tags:
+      - Reports
+      operationId: importAuthenticom
+      summary: Import Authenticom CSVs
+      description: Processes unprocessed CSVs from Authenticom's FTP server, creating/updating the contained orders. Empty request and response body.
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      responses:
+        '200':
+          description: Import triggered
+components:
+  parameters:
+    accountId:
+      name: accountId
+      in: path
+      required: true
+      description: Dealer / account id. Present on all account-scoped requests.
+      schema:
+        type: integer
+        format: int64
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT bearer token obtained from POST /api/v2/authentication/login.

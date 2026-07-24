@@ -1,0 +1,184 @@
+openapi: 3.0.3
+info:
+  title: TruVideo Platform Authentication Files API
+  version: v2
+  description: 'REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo''s published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.'
+  contact:
+    name: TruVideo Developer Team
+    email: devmgr+git@truvideo.com
+    url: https://truvideo.com/software-partnerships/
+  x-generated-by: api-evangelist-enrichment
+  x-source: https://github.com/Truvideo/Documentation
+servers:
+- url: https://app.truvideo.com
+  description: Production
+- url: https://dev.truvideo.com
+  description: Sandbox / test (requires a TruVideo Sandbox account; may be gated)
+security:
+- bearerAuth: []
+tags:
+- name: Files
+paths:
+  /files:
+    post:
+      tags:
+      - Files
+      operationId: uploadFile
+      summary: Upload file binary
+      description: Uploads a file as a multipart request and returns its metadata.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: File metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileMetadata'
+  /files/metadata/{uuid}:
+    get:
+      tags:
+      - Files
+      operationId: getFileMetadata
+      summary: Get file metadata
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: File metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileMetadata'
+  /files/entity/{entityType}/{entityID}:
+    get:
+      tags:
+      - Files
+      operationId: getFilesByEntity
+      summary: Get files by entity
+      parameters:
+      - name: entityType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entityID
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Files associated with the entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntityFile'
+    post:
+      tags:
+      - Files
+      operationId: assignFilesToEntity
+      summary: Assign files to an entity
+      parameters:
+      - name: entityType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entityID
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  uuid:
+                    type: string
+                    format: uuid
+                  properties:
+                    type: object
+                    additionalProperties: true
+      responses:
+        '200':
+          description: Files associated
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntityFile'
+  /files/{url}:
+    get:
+      tags:
+      - Files
+      operationId: getFileBinary
+      summary: Get file binary
+      parameters:
+      - name: url
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Binary content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+components:
+  schemas:
+    EntityFile:
+      type: object
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FileMetadata'
+        position:
+          type: integer
+        properties:
+          type: object
+          additionalProperties: true
+    FileMetadata:
+      type: object
+      properties:
+        uuid:
+          type: string
+          format: uuid
+        url:
+          type: string
+          format: uri
+        name:
+          type: string
+        size:
+          type: integer
+        contentType:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT bearer token obtained from POST /api/v2/authentication/login.
