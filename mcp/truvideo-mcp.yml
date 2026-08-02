@@ -1,0 +1,100 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: >-
+  Candidate MCP tool surface derived from openapi/truvideo-openapi.yml operations.
+  No official/hosted TruVideo MCP server was found (searched org, docs, registries
+  2026-07-21). This is a proposed mapping, not a published server.
+summary: >-
+  A candidate Model Context Protocol tool set mapping each TruVideo Platform API
+  operation to an MCP tool. One tool per operationId.
+server:
+  name: truvideo
+  transport: null
+  url: null
+  auth: JWT bearer (see authentication/truvideo-authentication.yml)
+tools:
+  - name: auth_login
+    operationId: authLogin
+    description: Exchange email/password for a JWT access token.
+  - name: auth_logout
+    operationId: authLogout
+    description: Invalidate the current session token.
+  - name: list_users
+    operationId: listUsers
+    description: List users for an account (paged).
+  - name: get_dealer_repair_condition
+    operationId: getDealerRepairCondition
+    description: Check whether repair-condition is enabled for a dealer.
+  - name: get_repair_order
+    operationId: getRepairOrder
+    description: Get a repair order by id.
+  - name: list_repair_orders_by_status
+    operationId: listRepairOrdersByStatus
+    description: List repair orders by status (paged).
+  - name: create_repair_order
+    operationId: createRepairOrder
+    description: Create a repair order.
+  - name: update_repair_order
+    operationId: updateRepairOrder
+    description: Update a repair order.
+  - name: search_repair_orders
+    operationId: searchRepairOrders
+    description: Search repair orders by term, date range and status.
+  - name: search_videos
+    operationId: searchVideos
+    description: Search videos by term, dealer and order.
+  - name: get_video
+    operationId: getVideo
+    description: Get a video by id.
+  - name: create_video
+    operationId: createVideo
+    description: Create a video record.
+  - name: update_video
+    operationId: updateVideo
+    description: Update a video record.
+  - name: search_conversations
+    operationId: searchConversations
+    description: Search messaging conversations.
+  - name: get_conversation
+    operationId: getConversation
+    description: Get a conversation and its messages (paged).
+  - name: create_message
+    operationId: createMessage
+    description: Send a message / start a conversation.
+  - name: validate_phone_number
+    operationId: validatePhoneNumber
+    description: Validate a customer phone number.
+  - name: export_dealer_bible
+    operationId: exportDealerBible
+    description: Export dealer-bible CSV reports over a date range.
+  - name: import_authenticom
+    operationId: importAuthenticom
+    description: Trigger Authenticom CSV import.
+  - name: send_support_email
+    operationId: sendSupportEmail
+    description: Send a diagnostic support email.
+  - name: upload_file
+    operationId: uploadFile
+    description: Upload a file (multipart) and get its metadata.
+  - name: get_file_metadata
+    operationId: getFileMetadata
+    description: Get file metadata by uuid.
+  - name: get_files_by_entity
+    operationId: getFilesByEntity
+    description: List files associated with an entity.
+  - name: assign_files_to_entity
+    operationId: assignFilesToEntity
+    description: Associate files with an entity.
+  - name: get_chat_token
+    operationId: getChatToken
+    description: Get a per-device chat token.
+  - name: get_chat_contacts
+    operationId: getChatContacts
+    description: Search chat contacts.
+  - name: create_chat_channel
+    operationId: createChatChannel
+    description: Create a chat channel.
+  - name: update_chat_channel
+    operationId: updateChatChannel
+    description: Update a chat channel.

@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: probed
+source: Live HTTP probes of TruVideo hosts, 2026-07-21.
+summary: >-
+  No .well-known discovery documents are published on the TruVideo apex or app
+  hosts. All standard paths returned 404. Recorded as a valid negative result.
+probes:
+  - host: truvideo.com
+    path: /.well-known/security.txt
+    status: 404
+    file: null
+  - host: truvideo.com
+    path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - host: truvideo.com
+    path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - host: truvideo.com
+    path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - host: truvideo.com
+    path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - host: app.truvideo.com
+    path: /.well-known/security.txt
+    status: 404
+    file: null
+  - host: app.truvideo.com
+    path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - host: app.truvideo.com
+    path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - host: app.truvideo.com
+    path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - host: app.truvideo.com
+    path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+llms_txt:
+  - url: https://truvideo.com/llms.txt
+    status: 404
+  - url: https://app.truvideo.com/llms.txt
+    status: 200
+    note: Returns the SPA index.html shell, not a real llms.txt (no llms.txt published).

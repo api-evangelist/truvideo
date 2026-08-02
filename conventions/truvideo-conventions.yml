@@ -1,0 +1,62 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  TruVideo API documentation (github.com/Truvideo/Documentation) and
+  openapi/truvideo-openapi.yml.
+docs: https://github.com/Truvideo/Documentation
+summary: Cross-cutting semantics for the TruVideo Platform REST API (v2).
+auth:
+  style: jwt-bearer
+  header: Authorization
+  detail: See authentication/truvideo-authentication.yml
+account_scoping:
+  description: >-
+    Nearly every resource path is scoped to an {accountId} (dealer id) path
+    parameter, e.g. /api/v2/{accountId}/repair-order. Clients operate within a
+    dealer/account context.
+versioning:
+  style: uri-path
+  current: v2
+  detail: >-
+    The core platform API is versioned in the path (/api/v2/...). The file
+    service is served under /api/v1/files (v1). No version negotiation header
+    is documented.
+pagination:
+  style: spring-page
+  params:
+    page: { in: query, default: 0, note: zero-based page index }
+    size: { in: query, default: 25, note: records per page }
+  response_envelope:
+    content: array of items
+    fields: [totalPages, totalElements, number, numberOfElements, size, first, last, sort]
+  note: >-
+    List/search endpoints (users, repair-order search, videos, conversations,
+    chat contacts) return a Spring-style Page envelope wrapping `content`.
+idempotency:
+  supported: false
+  note: >-
+    No idempotency key mechanism (header/scope) is documented. Writes use POST
+    (create) and PUT (full update) with resource ids in the path.
+error_envelope:
+  documented: false
+  note: >-
+    The public docs do not publish a structured error catalog. Standard HTTP
+    status codes apply; missing/invalid tokens return 401. See
+    errors/ once/if a catalog is published.
+rate_limiting:
+  documented: false
+timestamps:
+  style: mixed
+  detail: >-
+    Order/video timestamps are epoch-millis integers (creationDate, updateDate,
+    lastViewedDate); message timestamps are ISO-8601 date-time strings.
+identifiers:
+  style: numeric-int64
+  detail: >-
+    Most entities (order, user, dealer, customer, video, conversation) use
+    numeric int64 ids. Files use UUIDs. Chat contacts/users use opaque string ids.
+cross_links:
+  authentication: authentication/truvideo-authentication.yml
+  lifecycle: lifecycle/truvideo-lifecycle.yml
+  data_model: data-model/truvideo-data-model.yml
+  openapi: openapi/truvideo-openapi.yml

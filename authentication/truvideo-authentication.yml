@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  TruVideo API documentation (github.com/Truvideo/Documentation:
+  authentication.md, README.md) and openapi/truvideo-openapi.yml.
+docs: https://github.com/Truvideo/Documentation/blob/master/authentication.md
+summary: >-
+  TruVideo's REST API uses JWT bearer-token authentication. Clients exchange
+  email + password at the login endpoint for a JWT, then send it in the
+  Authorization header (Bearer <token>) on every subsequent request. Sandbox
+  access requires a TruVideo Sandbox account; integration is gated
+  (devmgr+git@truvideo.com).
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    bearer_format: JWT
+    location: header
+    parameter: Authorization
+    description: >-
+      Bearer JWT required on all endpoints except the login endpoint. Token is
+      obtained from POST /api/v2/authentication/login and invalidated via
+      POST /api/v2/authentication/logout.
+token_endpoint:
+  operation: authLogin
+  method: POST
+  path: /api/v2/authentication/login
+  request: { email: string, password: string }
+  response: { token: JWT }
+logout_endpoint:
+  operation: authLogout
+  method: POST
+  path: /api/v2/authentication/logout
+chat_token:
+  note: >-
+    The in-app chat surface issues a separate per-device custom token via
+    GET /chat/authentication/{deviceId}.
+notes:
+  - All account-scoped requests carry an {accountId} (dealer id) path parameter.
+  - No OAuth 2.0 / OpenID Connect flow is documented; auth is a first-party JWT login.

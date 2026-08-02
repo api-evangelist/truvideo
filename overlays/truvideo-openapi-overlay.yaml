@@ -1,0 +1,42 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enrichment overlay for TruVideo Platform API
+  version: 1.0.0
+  x-generated: '2026-07-21'
+  x-method: generated
+  x-source: >-
+    Enhancements layered by the API Evangelist enrichment pipeline over
+    openapi/truvideo-openapi.yml (itself reconstructed from
+    github.com/Truvideo/Documentation). Does not mutate the base document.
+extends: ../openapi/truvideo-openapi.yml
+actions:
+  - target: $.info
+    description: Tag the API with its API Evangelist provenance and domain.
+    update:
+      x-api-evangelist-provider: truvideo
+      x-domain: automotive-service-communication
+      x-enrichment-note: >-
+        Spec reconstructed from published documentation; TruVideo does not ship
+        a first-party machine-readable OpenAPI.
+  - target: $.info.contact
+    description: Ensure integration contact is surfaced.
+    update:
+      x-integration-request: devmgr+git@truvideo.com
+  - target: $.servers
+    description: Annotate environment roles for discovery.
+    update: {}
+  - target: $
+    description: Attach cross-artifact links produced by the enrichment pass.
+    update:
+      x-artifacts:
+        authentication: ../authentication/truvideo-authentication.yml
+        conventions: ../conventions/truvideo-conventions.yml
+        data-model: ../data-model/truvideo-data-model.yml
+        lifecycle: ../lifecycle/truvideo-lifecycle.yml
+        sandbox: ../sandbox/truvideo-sandbox.yml
+        packages: ../packages/truvideo-packages.yml
+        mcp: ../mcp/truvideo-mcp.yml
+  - target: $.paths['/api/v2/authentication/login'].post
+    description: Flag the token-issuing operation for tooling.
+    update:
+      x-token-endpoint: true

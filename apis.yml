@@ -1,22 +1,186 @@
 aid: truvideo
 name: TruVideo
-description: 'TruVideo is a company surfaced as a portfolio company of bain-capital-ventures and added
-  to the API Evangelist network as a stub for enrichment. Sector: commerce. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  TruVideo is a video-intelligence and omnichannel communication platform for
+  service businesses, built for the automotive service market and expanding into
+  aviation, insurance, and commercial trucking. It lets dealers, service
+  advisors, and technicians capture and share videos, run AI features (noise
+  cancellation, real-time sentiment analysis, and a multilingual virtual
+  assistant), and drive SMS/messaging conversations tied to repair orders.
+  TruVideo's developer surface is SDK-first — modular on-device capture SDKs for
+  iOS, Android, .NET, React Native, and Capacitor — plus a REST Platform API
+  (v2) covering authentication, repair orders, videos, messaging, customers,
+  files, and reporting.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://truvideo.com/wp-content/uploads/2026/04/Line-6.png
 url: https://raw.githubusercontent.com/api-evangelist/truvideo/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - bain-capital-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: active
+x-tier-reason: enriched-from-public-developer-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Commerce
-apis: []
+- Video
+- Messaging
+- Automotive
+- Communications
+- SDK
+- Video Intelligence
+apis:
+- aid: truvideo:truvideo-authentication-api
+  name: TruVideo Authentication API
+  description: The Authentication API from TruVideo — 2 operation(s) for authentication.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-chat-api
+  name: TruVideo Chat API
+  description: The Chat API from TruVideo — 4 operation(s) for chat.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-chat-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-customers-api
+  name: TruVideo Customers API
+  description: The Customers API from TruVideo — 1 operation(s) for customers.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-customers-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-dealers-api
+  name: TruVideo Dealers API
+  description: The Dealers API from TruVideo — 1 operation(s) for dealers.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Dealers
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-dealers-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-files-api
+  name: TruVideo Files API
+  description: The Files API from TruVideo — 4 operation(s) for files.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-files-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-messages-api
+  name: TruVideo Messages API
+  description: The Messages API from TruVideo — 3 operation(s) for messages.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-messages-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-repair-orders-api
+  name: TruVideo Repair Orders API
+  description: The Repair Orders API from TruVideo — 5 operation(s) for repair orders.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Repair Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-repair-orders-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-reports-api
+  name: TruVideo Reports API
+  description: The Reports API from TruVideo — 2 operation(s) for reports.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-reports-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-support-api
+  name: TruVideo Support API
+  description: The Support API from TruVideo — 1 operation(s) for support.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Support
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-support-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-users-api
+  name: TruVideo Users API
+  description: The Users API from TruVideo — 1 operation(s) for users.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-users-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+- aid: truvideo:truvideo-videos-api
+  name: TruVideo Videos API
+  description: The Videos API from TruVideo — 3 operation(s) for videos.
+  humanURL: https://github.com/Truvideo/Documentation
+  baseURL: https://app.truvideo.com
+  tags:
+  - Videos
+  properties:
+  - type: OpenAPI
+    url: openapi/truvideo-videos-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/Truvideo/Documentation
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v1
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +189,47 @@ maintainers:
 common:
 - type: Website
   url: https://truvideo.com/
+- type: DomainSecurity
+  url: security/truvideo-domain-security.yml
+- type: SDKs
+  url: packages/truvideo-packages.yml
+- type: Packages
+  url: packages/truvideo-packages.yml
+- type: Authentication
+  url: authentication/truvideo-authentication.yml
+- type: Conventions
+  url: conventions/truvideo-conventions.yml
+- type: Lifecycle
+  url: lifecycle/truvideo-lifecycle.yml
+- type: Sandbox
+  url: sandbox/truvideo-sandbox.yml
+- type: Conformance
+  url: conformance/truvideo-conformance.yml
+- type: DataModel
+  url: data-model/truvideo-data-model.yml
+- type: Overlay
+  url: overlays/truvideo-openapi-overlay.yaml
+- type: WellKnown
+  url: well-known/truvideo-well-known.yml
+- type: MCPServer
+  url: mcp/truvideo-mcp.yml
+- type: LLMsTxt
+  url: llms/truvideo-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Documentation
+  url: https://github.com/Truvideo/Documentation
+- type: DeveloperPortal
+  url: https://truvideo.com/platform/
+- type: GitHubOrganization
+  url: https://github.com/Truvideo
+- type: Roadmap
+  url: https://github.com/Truvideo/Documentation/blob/master/README.md
+- type: Pricing
+  url: https://truvideo.com/pricing/
+- type: PrivacyPolicy
+  url: https://truvideo.com/privacy-policy/
+- type: Support
+  url: https://truvideo.com/faqs/
+- type: Login
+  url: https://app.truvideo.com/

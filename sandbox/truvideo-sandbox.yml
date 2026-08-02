@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  TruVideo API documentation (github.com/Truvideo/Documentation: README.md
+  "Accessing the Services").
+docs: https://github.com/Truvideo/Documentation
+summary: >-
+  TruVideo documents a separate test/sandbox environment alongside production.
+  A TruVideo Sandbox account must be requested; integration is gated behind a
+  security review (contact devmgr+git@truvideo.com).
+environments:
+  - name: test
+    aka: sandbox / dev
+    base_url: https://dev.truvideo.com/
+    note: >-
+      Documented sandbox host. Requires a provisioned TruVideo Sandbox account.
+      Probed 2026-07-21 and did not resolve/respond (HTTP 000) from the public
+      internet — access appears provisioned/gated per partner.
+  - name: production
+    base_url: https://app.truvideo.com/
+    note: Live host; responded 200 on probe 2026-07-21.
+access:
+  self_service: false
+  process: >-
+    Prospective integrators email devmgr+git@truvideo.com to request Sandbox
+    access. The org enforces "very strict security guidelines" per the API README.
+test_values:
+  published: false
+  note: >-
+    No hosted test tokens, test cards, or fixture/trigger tooling are published
+    (this is a video/messaging platform, not a payments provider). No test
+    values were invented.

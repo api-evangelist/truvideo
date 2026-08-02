@@ -1,0 +1,97 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  Derived from openapi/truvideo-openapi.yml schema $refs and id-reference fields,
+  cross-checked against TruVideo API documentation (github.com/Truvideo/Documentation).
+summary: >-
+  Entity-relationship graph for the TruVideo Platform API. The domain centers on
+  the automotive service workflow: an Account (dealer) owns Users, Repair Orders,
+  Videos and Conversations; a Repair Order ties together a Dealer, an Advisor and
+  a Customer.
+entities:
+  - name: Account
+    aka: Dealer
+    id: accountId (int64)
+    note: Top-level tenant. Present as a path parameter on nearly all resources.
+  - name: User
+    id: id (int64)
+    note: Account member (service advisor / manager / technician).
+  - name: Dealer
+    id: id (int64)
+  - name: Advisor
+    id: id (int64)
+    note: Service advisor assigned to an order.
+  - name: Customer
+    id: id (int64)
+  - name: RepairOrder
+    id: id (int64)
+    aka: repair-order
+  - name: Video
+    id: id (int64)
+  - name: Conversation
+    id: id (int64)
+  - name: TextMessage
+    id: id (int64)
+  - name: FileMetadata
+    id: uuid (UUID)
+  - name: Contact
+    id: userId (string)
+  - name: Channel
+    id: channelId (int64)
+relationships:
+  - from: Account
+    to: User
+    type: has_many
+    via: accountId
+  - from: Account
+    to: RepairOrder
+    type: has_many
+    via: accountId
+  - from: RepairOrder
+    to: Dealer
+    type: has_one
+    via: dealer
+  - from: RepairOrder
+    to: Advisor
+    type: has_one
+    via: advisor
+  - from: RepairOrder
+    to: Customer
+    type: has_one
+    via: customer
+  - from: Video
+    to: RepairOrder
+    type: belongs_to
+    via: orderId
+  - from: Video
+    to: User
+    type: belongs_to
+    via: uploaderId
+  - from: Conversation
+    to: RepairOrder
+    type: belongs_to
+    via: orderId
+  - from: Conversation
+    to: Customer
+    type: belongs_to
+    via: customerId
+  - from: Conversation
+    to: User
+    type: belongs_to
+    via: ownerId
+  - from: Conversation
+    to: TextMessage
+    type: has_many
+    via: messages.content
+  - from: FileMetadata
+    to: Account
+    type: belongs_to
+    via: entity association (files/entity/{entityType}/{entityID})
+  - from: Channel
+    to: Contact
+    type: has_many
+    via: member
+id_conventions:
+  numeric_int64: [Account, User, Dealer, Advisor, Customer, RepairOrder, Video, Conversation, TextMessage, Channel]
+  uuid: [FileMetadata]
+  opaque_string: [Contact]

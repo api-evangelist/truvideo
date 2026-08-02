@@ -1,0 +1,147 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  github.com/Truvideo organization repositories (55 public repos, enumerated via
+  GitHub API 2026-07-21). TruVideo distributes its mobile capture SDKs primarily
+  as source/native modules through GitHub (Swift Package Manager / CocoaPods for
+  iOS, Gradle/Maven for Android, npm-packaged React Native + Capacitor plugins,
+  NuGet-packaged .NET modules). None of the React Native / Capacitor packages
+  were found published on the public npm registry as of 2026-07-21 — they are
+  distributed via the GitHub repositories.
+notes: >-
+  TruVideo's public developer surface is SDK-first: a modular family of on-device
+  video, camera, media, image and core modules for embedding TruVideo capture and
+  communication into partner apps. Modules are grouped by platform and by
+  capability (core / camera / video / media / image).
+official: true
+org: https://github.com/Truvideo
+platforms:
+  ios:
+    distribution: [Swift Package Manager, CocoaPods]
+    language: Swift
+    packages:
+      - name: truvideo-sdk-ios-core
+        repo: https://github.com/Truvideo/truvideo-sdk-ios-core
+        module: core
+      - name: truvideo-sdk-ios-camera
+        repo: https://github.com/Truvideo/truvideo-sdk-ios-camera
+        module: camera
+      - name: truvideo-sdk-ios-video
+        repo: https://github.com/Truvideo/truvideo-sdk-ios-video
+        module: video
+      - name: truvideo-sdk-ios-media
+        repo: https://github.com/Truvideo/truvideo-sdk-ios-media
+        module: media
+      - name: truvideo-sdk-ios-image
+        repo: https://github.com/Truvideo/truvideo-sdk-ios-image
+        module: image
+      - name: truvideo-sdk-ios-common
+        repo: https://github.com/Truvideo/truvideo-sdk-ios-common
+        module: common
+    cocoapods_podspecs:
+      - repo: https://github.com/Truvideo/truvideo-sdk-ios-core-pod
+      - repo: https://github.com/Truvideo/truvideo-sdk-ios-camera-pod
+      - repo: https://github.com/Truvideo/truvideo-sdk-ios-video-pod
+      - repo: https://github.com/Truvideo/truvideo-sdk-ios-media-pod
+      - repo: https://github.com/Truvideo/truvideo-sdk-ios-image-pod
+    documentation: https://github.com/Truvideo/truvideo-sdk-ios-documentation
+  android:
+    distribution: [Gradle, Maven]
+    language: Kotlin
+    packages:
+      - name: truvideo-sdk-core-android-net
+        repo: https://github.com/Truvideo/truvideo-sdk-core-android-net
+        module: core
+      - name: truvideo-sdk-camera-android-net
+        repo: https://github.com/Truvideo/truvideo-sdk-camera-android-net
+        module: camera
+      - name: truvideo-sdk-video-android-net
+        repo: https://github.com/Truvideo/truvideo-sdk-video-android-net
+        module: video
+      - name: truvideo-sdk-media-android-net
+        repo: https://github.com/Truvideo/truvideo-sdk-media-android-net
+        module: media
+      - name: truvideo-sdk-image-android-net
+        repo: https://github.com/Truvideo/truvideo-sdk-image-android-net
+        module: image
+  dotnet:
+    distribution: [NuGet]
+    language: 'C# / .NET (MAUI)'
+    packages:
+      - name: truvideo-sdk-core-net
+        repo: https://github.com/Truvideo/truvideo-sdk-core-net
+        module: core
+      - name: truvideo-sdk-camera-net
+        repo: https://github.com/Truvideo/truvideo-sdk-camera-net
+        module: camera
+      - name: truvideo-sdk-video-net
+        repo: https://github.com/Truvideo/truvideo-sdk-video-net
+        module: video
+      - name: truvideo-sdk-media-net
+        repo: https://github.com/Truvideo/truvideo-sdk-media-net
+        module: media
+      - name: truvideo-sdk-image-net
+        repo: https://github.com/Truvideo/truvideo-sdk-image-net
+        module: image
+    samples:
+      - https://github.com/Truvideo/truvideo-sdk-net-sample
+      - https://github.com/Truvideo/truvideo-sdk-net-demo
+  react_native:
+    distribution: [npm-packaged, GitHub]
+    language: TypeScript
+    npm_published: false
+    packages:
+      - name: truvideo-react-core-sdk
+        repo: https://github.com/Truvideo/TruVideoReactCoreSdk
+        version: 0.1.0
+        module: core
+      - name: truvideo-react-video-sdk
+        repo: https://github.com/Truvideo/TruVideoReactVideoSdk
+        version: 0.1.0
+        module: video
+      - name: truvideo-react-camera-sdk
+        repo: https://github.com/Truvideo/TruVideoReactCameraSdk
+        version: 0.1.0
+        module: camera
+      - name: truvideo-react-media-sdk
+        repo: https://github.com/Truvideo/TruVideoReactMediaSdk
+        version: 0.1.0
+        module: media
+      - name: truvideo-react-image-sdk
+        repo: https://github.com/Truvideo/TruVideoReactImageSdk
+        version: 0.1.0
+        module: image
+    turbo_modules:
+      - https://github.com/Truvideo/TruVideoReactTurboCoreSdk
+      - https://github.com/Truvideo/TruVideoReactTurboCameraSdk
+      - https://github.com/Truvideo/TruVideoReactTurboMediaSdk
+      - https://github.com/Truvideo/TruVideoReactTurboImageSdk
+      - https://github.com/Truvideo/TruVideoReactTurboVideoSdk
+    samples:
+      - https://github.com/Truvideo/truvideo-react-native-sample-app
+      - https://github.com/Truvideo/truvideo-react-native-turbo-sample-app
+  capacitor:
+    distribution: [npm-packaged, GitHub]
+    language: TypeScript
+    npm_published: false
+    packages:
+      - name: truvideo-capacitor-core-sdk
+        repo: https://github.com/Truvideo/TruVideoCapacitorCoreSdk
+        version: 0.0.1
+        module: core
+      - name: truvideo-capacitor-video-sdk
+        repo: https://github.com/Truvideo/TruvideoCapacitorVideoSdk
+        version: 0.0.1
+        module: video
+      - name: truvideo-capacitor-camera-sdk
+        repo: https://github.com/Truvideo/TruVideoCapacitorCameraSdk
+        module: camera
+      - name: truvideo-capacitor-media-sdk
+        repo: https://github.com/Truvideo/TruvideoCapacitorMediaSdk
+        module: media
+      - name: truvideo-capacitor-image-sdk
+        repo: https://github.com/Truvideo/TruVideoCapacitorImageSdk
+        module: image
+    samples:
+      - https://github.com/Truvideo/TruVideoCapacitorSampleAppTS
+      - https://github.com/Truvideo/TruVideoCapacitorSampleApp

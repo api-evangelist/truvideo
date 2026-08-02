@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  TruVideo API documentation (github.com/Truvideo/Documentation: README.md
+  roadmap) and openapi/truvideo-openapi.yml.
+docs: https://github.com/Truvideo/Documentation
+summary: >-
+  Versioning and lifecycle posture for the TruVideo Platform API, reconstructed
+  from published documentation.
+versioning:
+  style: uri-path
+  current: v2
+  observed_versions:
+    - version: v1
+      note: File service (/api/v1/files) — legacy prefix still referenced by returned file URLs.
+    - version: v2
+      note: Current platform API (/api/v2/...).
+deprecation_policy:
+  documented: false
+  headers:
+    sunset: not observed
+    deprecation: not observed
+status_page:
+  found: false
+  note: No public status/uptime page discovered on truvideo.com.
+sla:
+  documented: false
+roadmap:
+  documented: true
+  source: https://github.com/Truvideo/Documentation/blob/master/README.md
+  note: >-
+    The API README publishes a forecasted roadmap (Chat API, WhatsApp / WeChat
+    integrations, video thumbnails, video ML analytics, RCS support). Dates in
+    the published README are historical relative to 2026 and reflect the
+    document's original authoring.
+deprecated_operations: []

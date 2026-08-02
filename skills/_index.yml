@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: generated
+source: >-
+  Generated from openapi/truvideo-openapi.yml operations. All operationIds are
+  grounded in the reconstructed spec. No provider-published skills/AGENTS.md was
+  found (searched github.com/Truvideo 2026-07-21).
+api: openapi/truvideo-openapi.yml
+skills:
+  - file: truvideo-repair-order-video.md
+    name: Send a repair-order video to a customer
+    operations: [authLogin, createRepairOrder, uploadFile, createVideo, createMessage]
+  - file: truvideo-conversation-triage.md
+    name: Triage and reply to customer conversations
+    operations: [authLogin, searchConversations, getConversation, createMessage]
+  - file: truvideo-order-lookup.md
+    name: Look up and update a repair order
+    operations: [authLogin, searchRepairOrders, getRepairOrder, updateRepairOrder]

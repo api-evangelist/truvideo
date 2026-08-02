@@ -1,0 +1,34 @@
+{
+  "provider": "truvideo",
+  "sources": [
+    "truvideo-authentication-api-openapi.yml",
+    "truvideo-chat-api-openapi.yml",
+    "truvideo-customers-api-openapi.yml",
+    "truvideo-dealers-api-openapi.yml",
+    "truvideo-files-api-openapi.yml",
+    "truvideo-messages-api-openapi.yml",
+    "truvideo-repair-orders-api-openapi.yml",
+    "truvideo-reports-api-openapi.yml",
+    "truvideo-support-api-openapi.yml",
+    "truvideo-users-api-openapi.yml",
+    "truvideo-videos-api-openapi.yml"
+  ],
+  "outputs": [
+    "truvideo-authentication-api-openapi.yml",
+    "truvideo-chat-api-openapi.yml",
+    "truvideo-customers-api-openapi.yml",
+    "truvideo-dealers-api-openapi.yml",
+    "truvideo-files-api-openapi.yml",
+    "truvideo-messages-api-openapi.yml",
+    "truvideo-repair-orders-api-openapi.yml",
+    "truvideo-reports-api-openapi.yml",
+    "truvideo-support-api-openapi.yml",
+    "truvideo-users-api-openapi.yml",
+    "truvideo-videos-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

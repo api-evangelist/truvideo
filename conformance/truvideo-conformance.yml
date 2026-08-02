@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  Derived from openapi/truvideo-openapi.yml and TruVideo API documentation
+  (github.com/Truvideo/Documentation).
+summary: >-
+  Cross-cutting standards conformance assertions for the TruVideo Platform API.
+  Each entry records whether the API conforms and the evidence.
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      Auth is a first-party JWT login (email/password -> bearer token), not an
+      OAuth 2.0 authorization framework. No token/authorize endpoints or grants.
+  - id: oidc
+    conforms: false
+    evidence: No OpenID Connect discovery or id_token flow documented.
+  - id: rfc9457
+    conforms: false
+    evidence: >-
+      No application/problem+json error envelope is documented; standard HTTP
+      status codes are used without a structured problem catalog.
+  - id: pagination
+    conforms: true
+    evidence: >-
+      Consistent Spring-style Page envelope (content + totalPages/totalElements/
+      number/size/first/last) with page & size query params across list/search
+      endpoints.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key header or mechanism documented.
+  - id: json:api
+    conforms: false
+    evidence: Responses are plain JSON resource objects, not JSON:API documents.
+  - id: fhir
+    conforms: false
+    evidence: Not a healthcare/FHIR API.
+  - id: fapi
+    conforms: false
+    evidence: No FAPI profile; not a financial-grade API.
+  - id: scim
+    conforms: false
+    evidence: User management is proprietary, not SCIM.
+  - id: odata
+    conforms: false
+    evidence: No OData query conventions.
+  - id: psd2
+    conforms: false
+    evidence: Not a payments/PSD2 API.
