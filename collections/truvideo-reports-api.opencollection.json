@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TruVideo Platform Authentication Reports API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Export Dealer Bible CSVs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/api/v2/:accountId/reports/export/dealer-bible",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Exports orders in a time range for the given dealers as CSVs to the configured SFTP server."
+        },
+        {
+          "info": {
+            "name": "Import Authenticom CSVs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/api/v2/:accountId/reports/import/authenticom",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              }
+            ]
+          },
+          "docs": "Processes unprocessed CSVs from Authenticom's FTP server, creating/updating the contained orders. Empty request and response body."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

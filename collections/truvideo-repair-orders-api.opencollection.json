@@ -1,0 +1,186 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TruVideo Platform Authentication Repair Orders API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Repair Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get order by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/api/v2/:accountId/repair-order/:orderId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get order by id"
+        },
+        {
+          "info": {
+            "name": "Get orders by status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/api/v2/:accountId/repair-order/status/:statusKey",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "statusKey",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number (default 0)."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (default 25)."
+              }
+            ]
+          },
+          "docs": "Get orders by status"
+        },
+        {
+          "info": {
+            "name": "Create order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/api/v2/:accountId/repair-order",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create order"
+        },
+        {
+          "info": {
+            "name": "Update order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.truvideo.com/api/v2/:accountId/repair-order/:repairOrderId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "repairOrderId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update order"
+        },
+        {
+          "info": {
+            "name": "Search orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/api/v2/:accountId/repair-order/search",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "creationDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "creationDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number (default 0)."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (default 25)."
+              }
+            ]
+          },
+          "docs": "Search orders by a term compared against customer first/last name, job service number and dealer name; optionally filtered by a creation-date interval and status."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

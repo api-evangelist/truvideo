@@ -1,0 +1,131 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TruVideo Platform Authentication Files API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload file binary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/files",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Uploads a file as a multipart request and returns its metadata."
+        },
+        {
+          "info": {
+            "name": "Get file metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/files/metadata/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get file metadata"
+        },
+        {
+          "info": {
+            "name": "Get files by entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/files/entity/:entityType/:entityID",
+            "params": [
+              {
+                "name": "entityType",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entityID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get files by entity"
+        },
+        {
+          "info": {
+            "name": "Assign files to an entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/files/entity/:entityType/:entityID",
+            "params": [
+              {
+                "name": "entityType",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entityID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Assign files to an entity"
+        },
+        {
+          "info": {
+            "name": "Get file binary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/files/:url",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get file binary"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

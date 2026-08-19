@@ -1,0 +1,134 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TruVideo Platform Authentication Messages API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search conversations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/api/v2/:accountId/messages/conversations",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number (default 0)."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (default 25)."
+              }
+            ]
+          },
+          "docs": "Search conversations"
+        },
+        {
+          "info": {
+            "name": "Get messages by conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/api/v2/:accountId/messages/conversations/:conversationId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "conversationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number (default 0)."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (default 25)."
+              }
+            ]
+          },
+          "docs": "Get messages by conversation"
+        },
+        {
+          "info": {
+            "name": "Create message for conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/api/v2/:accountId/messages",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new message. When conversationId is null a new conversation is started; otherwise the message is appended to the referenced conversation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

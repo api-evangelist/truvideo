@@ -1,0 +1,611 @@
+{
+  "item": [
+    {
+      "id": "81469aa4-4320-41bb-8a38-3f7d128d1ae3",
+      "name": "Videos",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e2a35688-68f9-48e8-b01e-289eb54de997",
+          "name": "Search videos",
+          "request": {
+            "name": "Search videos",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "videos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "searchTerm",
+                  "value": "<string>",
+                  "description": "Searches across Title and Description"
+                },
+                {
+                  "disabled": false,
+                  "key": "dealerId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Zero-based page number (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25",
+                  "description": "Records per page (default 25)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8bc4b43e-a78d-4603-a6a9-bde2d5bc7f01",
+              "name": "Paged videos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "videos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealerId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalPages\": 6477,\n  \"totalElements\": 5844,\n  \"last\": true,\n  \"first\": true,\n  \"size\": 87,\n  \"number\": 9023,\n  \"numberOfElements\": 7830,\n  \"sort\": {},\n  \"content\": [\n    {\n      \"title\": \"string\",\n      \"url\": \"https://XqG.xtyvCEDO5-TcQLfctJCbh6xfE\",\n      \"description\": \"string\",\n      \"thumbnail\": \"http://Jc.dmMjUJluEyrtYW5pbAnPXvHJOfOiE5rmTS3uYzzMsma+bnuNHwcl\",\n      \"length\": 4908,\n      \"lastViewedDate\": 675,\n      \"playedDuration\": 8352,\n      \"uploaderId\": 455,\n      \"orderId\": 4157,\n      \"id\": 8511\n    },\n    {\n      \"title\": \"string\",\n      \"url\": \"http://vgniBgnWDWZax.ljz9n2fCHKcBIMe\",\n      \"description\": \"string\",\n      \"thumbnail\": \"https://ZoKhfyvM.adela0b1q+.6wjbJnlcFEMQY1gZgifyLm1nwER\",\n      \"length\": 230,\n      \"lastViewedDate\": 4338,\n      \"playedDuration\": 5304,\n      \"uploaderId\": 2574,\n      \"orderId\": 3033,\n      \"id\": 8382\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34f464b1-daaf-4709-9674-7909c8c866a6",
+          "name": "Create video",
+          "request": {
+            "name": "Create video",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "videos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"thumbnail\": \"<uri>\",\n  \"length\": \"<integer>\",\n  \"lastViewedDate\": \"<long>\",\n  \"playedDuration\": \"<integer>\",\n  \"uploaderId\": \"<long>\",\n  \"orderId\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d496ebfb-f1fd-43be-948b-0554abad1561",
+              "name": "Created video",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "videos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"thumbnail\": \"<uri>\",\n  \"length\": \"<integer>\",\n  \"lastViewedDate\": \"<long>\",\n  \"playedDuration\": \"<integer>\",\n  \"uploaderId\": \"<long>\",\n  \"orderId\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"thumbnail\": \"<uri>\",\n  \"length\": \"<integer>\",\n  \"lastViewedDate\": \"<long>\",\n  \"playedDuration\": \"<integer>\",\n  \"uploaderId\": \"<long>\",\n  \"orderId\": \"<long>\",\n  \"id\": 884\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b86b5f5-0a74-402d-9cd6-22e1e0c17a69",
+          "name": "Get video by id",
+          "request": {
+            "name": "Get video by id",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "videos",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3dee4360-c688-4ecf-bb6a-532e8558717a",
+              "name": "The video",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "videos",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"thumbnail\": \"<uri>\",\n  \"length\": \"<integer>\",\n  \"lastViewedDate\": \"<long>\",\n  \"playedDuration\": \"<integer>\",\n  \"uploaderId\": \"<long>\",\n  \"orderId\": \"<long>\",\n  \"id\": 884\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0926411-d63e-4d63-a661-99b95896ea89",
+              "name": "Video not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "videos",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3f3f5e7-64a8-4011-a29f-858a5c01676d",
+          "name": "Update video",
+          "request": {
+            "name": "Update video",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "video",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"thumbnail\": \"<uri>\",\n  \"length\": \"<integer>\",\n  \"lastViewedDate\": \"<long>\",\n  \"playedDuration\": \"<integer>\",\n  \"uploaderId\": \"<long>\",\n  \"orderId\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1460df7e-0229-4a7b-b7ba-a88b89afa67a",
+              "name": "Updated video",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "video",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"thumbnail\": \"<uri>\",\n  \"length\": \"<integer>\",\n  \"lastViewedDate\": \"<long>\",\n  \"playedDuration\": \"<integer>\",\n  \"uploaderId\": \"<long>\",\n  \"orderId\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"thumbnail\": \"<uri>\",\n  \"length\": \"<integer>\",\n  \"lastViewedDate\": \"<long>\",\n  \"playedDuration\": \"<integer>\",\n  \"uploaderId\": \"<long>\",\n  \"orderId\": \"<long>\",\n  \"id\": 884\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.truvideo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "93b38a4f-3d3b-4670-b393-df6a9061e9c0",
+    "name": "TruVideo Platform Authentication Videos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo's published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.\n\nContact Support:\n Name: TruVideo Developer Team\n Email: devmgr+git@truvideo.com",
+      "type": "text/plain"
+    }
+  }
+}

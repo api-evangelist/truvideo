@@ -1,0 +1,156 @@
+{
+  "item": [
+    {
+      "id": "57186a9c-8529-4dd4-927a-704422bffe92",
+      "name": "Support",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "67116bc5-a299-44ef-8056-f2bc37a9f88e",
+          "name": "Send email to support",
+          "request": {
+            "name": "Send email to support",
+            "description": {
+              "content": "Sends a diagnostic support email containing device and environment metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "support",
+                "email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dealerId\": \"<string>\",\n  \"dealerName\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"appVersion\": \"<string>\",\n  \"dateTime\": \"<string>\",\n  \"phoneId\": \"<string>\",\n  \"phoneType\": \"<string>\",\n  \"phoneOsVersion\": \"<string>\",\n  \"comment\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "195a8a1e-2755-488a-a980-970bd5241cf4",
+              "name": "Support email sent",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "support",
+                    "email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dealerId\": \"<string>\",\n  \"dealerName\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"appVersion\": \"<string>\",\n  \"dateTime\": \"<string>\",\n  \"phoneId\": \"<string>\",\n  \"phoneType\": \"<string>\",\n  \"phoneOsVersion\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"key_0\": \"string\",\n  \"key_1\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.truvideo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7fc28ef6-d894-4db8-902c-1b6ebc4a9cd7",
+    "name": "TruVideo Platform Authentication Support API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo's published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.\n\nContact Support:\n Name: TruVideo Developer Team\n Email: devmgr+git@truvideo.com",
+      "type": "text/plain"
+    }
+  }
+}

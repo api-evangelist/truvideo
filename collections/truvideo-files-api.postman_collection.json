@@ -1,0 +1,577 @@
+{
+  "item": [
+    {
+      "id": "5aba5b1e-1d9c-47c3-bf6a-b299d27872a0",
+      "name": "Files",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "80005b0a-c9bb-4ccb-b573-37e1ad98c25c",
+          "name": "Upload file binary",
+          "request": {
+            "name": "Upload file binary",
+            "description": {
+              "content": "Uploads a file as a multipart request and returns its metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9e49da71-c382-4ac2-9e77-cf9891d5f8ea",
+              "name": "File metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"0d2d32c6-1ccb-d4de-661b-4cf368db5e23\",\n  \"url\": \"https://DaXOEdAqALMzVh.vfRROmWebzCCU5OvudDJRglgHXbW.LFvUA01UA9cwtocTfpk2TzR1bzSVfqoDblEe\",\n  \"name\": \"string\",\n  \"size\": 2617,\n  \"contentType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f4782b0f-92db-47f2-b846-13a488bbe0de",
+          "name": "Get file metadata",
+          "request": {
+            "name": "Get file metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                "metadata",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "470dd65e-1b37-452d-89ec-0a21550b9514",
+              "name": "File metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    "metadata",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"0d2d32c6-1ccb-d4de-661b-4cf368db5e23\",\n  \"url\": \"https://DaXOEdAqALMzVh.vfRROmWebzCCU5OvudDJRglgHXbW.LFvUA01UA9cwtocTfpk2TzR1bzSVfqoDblEe\",\n  \"name\": \"string\",\n  \"size\": 2617,\n  \"contentType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8bf6d83f-579d-4da9-a45d-2b8efe774be6",
+          "name": "Get files by entity",
+          "request": {
+            "name": "Get files by entity",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                "entity",
+                ":entityType",
+                ":entityID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityType",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "80bba42b-17d2-45df-8254-29073ce4e38a",
+              "name": "Files associated with the entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    "entity",
+                    ":entityType",
+                    ":entityID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"metadata\": {\n      \"uuid\": \"19f12352-931c-774e-e2a9-74b0d460a738\",\n      \"url\": \"https://KMHtpzlHfHIpbxRetGIPxaPIeWSuDE.igdqJX7B+0VYhnzgYu3aFI18D.WWeN,Sfn,bm+Kq1yOdohEb5h+ktEnqHSWKF+abUJEyMzbj7Cpk6+QpphJGS67NiKWF,qt7z8\",\n      \"name\": \"string\",\n      \"size\": 4901,\n      \"contentType\": \"string\"\n    },\n    \"position\": 5709,\n    \"properties\": {\n      \"key_0\": 7292.012685808287\n    }\n  },\n  {\n    \"metadata\": {\n      \"uuid\": \"185fb48d-1421-3545-2246-3f9a9f1b55fe\",\n      \"url\": \"https://LdWHhAljKxl.okngPXaGVPp+lvW6TDLG8A-mE50nbpFjo+gkXczW5YxhaK0eLl\",\n      \"name\": \"string\",\n      \"size\": 3333,\n      \"contentType\": \"string\"\n    },\n    \"position\": 1631,\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": 8645\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d5e1e19-1e39-4bc5-8115-4c19f3f20f5a",
+          "name": "Assign files to an entity",
+          "request": {
+            "name": "Assign files to an entity",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                "entity",
+                ":entityType",
+                ":entityID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityType",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"uuid\": \"<uuid>\",\n    \"properties\": {\n      \"key_0\": \"string\"\n    }\n  },\n  {\n    \"uuid\": \"<uuid>\",\n    \"properties\": {\n      \"key_0\": 9920,\n      \"key_1\": true,\n      \"key_2\": false\n    }\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4fa5fbe7-c849-47b9-b65e-40d604df9049",
+              "name": "Files associated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    "entity",
+                    ":entityType",
+                    ":entityID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"uuid\": \"<uuid>\",\n    \"properties\": {\n      \"key_0\": 2560.682696336866,\n      \"key_1\": false\n    }\n  },\n  {\n    \"uuid\": \"<uuid>\",\n    \"properties\": {\n      \"key_0\": 8451.979278294832,\n      \"key_1\": \"string\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"metadata\": {\n      \"uuid\": \"19f12352-931c-774e-e2a9-74b0d460a738\",\n      \"url\": \"https://KMHtpzlHfHIpbxRetGIPxaPIeWSuDE.igdqJX7B+0VYhnzgYu3aFI18D.WWeN,Sfn,bm+Kq1yOdohEb5h+ktEnqHSWKF+abUJEyMzbj7Cpk6+QpphJGS67NiKWF,qt7z8\",\n      \"name\": \"string\",\n      \"size\": 4901,\n      \"contentType\": \"string\"\n    },\n    \"position\": 5709,\n    \"properties\": {\n      \"key_0\": 7292.012685808287\n    }\n  },\n  {\n    \"metadata\": {\n      \"uuid\": \"185fb48d-1421-3545-2246-3f9a9f1b55fe\",\n      \"url\": \"https://LdWHhAljKxl.okngPXaGVPp+lvW6TDLG8A-mE50nbpFjo+gkXczW5YxhaK0eLl\",\n      \"name\": \"string\",\n      \"size\": 3333,\n      \"contentType\": \"string\"\n    },\n    \"position\": 1631,\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": 8645\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70e76d98-3f34-4cd2-b780-54bed2450339",
+          "name": "Get file binary",
+          "request": {
+            "name": "Get file binary",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                ":url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5092598-626b-4df2-91aa-912c7081b490",
+              "name": "Binary content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    ":url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.truvideo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b846f3db-9a88-4f80-afb0-1579a94ae261",
+    "name": "TruVideo Platform Authentication Files API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo's published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.\n\nContact Support:\n Name: TruVideo Developer Team\n Email: devmgr+git@truvideo.com",
+      "type": "text/plain"
+    }
+  }
+}

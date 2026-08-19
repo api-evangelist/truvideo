@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TruVideo Platform Authentication Dealers API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dealers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get repair condition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/api/v2/:accountId/dealer/repairCondition",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              }
+            ]
+          },
+          "docs": "Gets whether the repair-condition feature is enabled for a dealer."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

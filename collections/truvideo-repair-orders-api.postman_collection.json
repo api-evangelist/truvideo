@@ -1,0 +1,761 @@
+{
+  "item": [
+    {
+      "id": "074895f1-e5ea-4392-9a0d-238cd4a34dbe",
+      "name": "Repair Orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4b35b6c8-4099-4347-ae96-898b75eb6a2d",
+          "name": "Get order by id",
+          "request": {
+            "name": "Get order by id",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "repair-order",
+                ":orderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "orderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f4dfb65-253b-4f38-8179-3fd676600050",
+              "name": "The repair order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "repair-order",
+                    ":orderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "orderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6328,\n  \"number\": \"string\",\n  \"status\": \"string\",\n  \"repairCondition\": \"string\",\n  \"originalAmount\": 3498.715757692122,\n  \"creationDate\": 3884,\n  \"updateDate\": 2902,\n  \"dealer\": {\n    \"id\": 6404,\n    \"name\": \"string\",\n    \"status\": \"string\",\n    \"phone\": \"string\",\n    \"supportNumber\": \"string\",\n    \"partner\": 8364,\n    \"distributor\": \"string\",\n    \"timeZone\": \"string\"\n  },\n  \"advisor\": {\n    \"id\": 3206,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"title\": \"string\",\n    \"mobileNumber\": \"string\",\n    \"email\": \"KWR1Giaj@QMfICphCbIkasaQtJvQzQBCSsUaAjSJ.vb\",\n    \"status\": \"string\"\n  },\n  \"customer\": {\n    \"id\": 2503,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mobileNumber\": \"string\",\n    \"mobileStatus\": \"Valid\",\n    \"email\": \"3hPU-OzdkugAwV@Pj.uu\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b13d97d-c54d-4b02-9779-2465d3a59101",
+              "name": "Order not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "repair-order",
+                    ":orderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "orderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "97f15ce4-92d9-46f2-8ea5-40bff6397c7e",
+          "name": "Get orders by status",
+          "request": {
+            "name": "Get orders by status",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "repair-order",
+                "status",
+                ":statusKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Zero-based page number (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25",
+                  "description": "Records per page (default 25)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "statusKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c04c8950-8b63-4bf7-a986-e1038d717e44",
+              "name": "Paged repair orders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "repair-order",
+                    "status",
+                    ":statusKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "statusKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalPages\": 5495,\n  \"totalElements\": 3775,\n  \"last\": false,\n  \"first\": false,\n  \"size\": 7749,\n  \"number\": 6480,\n  \"numberOfElements\": 6353,\n  \"sort\": {},\n  \"content\": [\n    {\n      \"id\": 284,\n      \"number\": \"string\",\n      \"status\": \"string\",\n      \"repairCondition\": \"string\",\n      \"originalAmount\": 7884.485571898731,\n      \"creationDate\": 2436,\n      \"updateDate\": 3218,\n      \"dealer\": {\n        \"id\": 7767,\n        \"name\": \"string\",\n        \"status\": \"string\",\n        \"phone\": \"string\",\n        \"supportNumber\": \"string\",\n        \"partner\": 462,\n        \"distributor\": \"string\",\n        \"timeZone\": \"string\"\n      },\n      \"advisor\": {\n        \"id\": 2091,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"title\": \"string\",\n        \"mobileNumber\": \"string\",\n        \"email\": \"x2ONIAoRp@OgVqsYRBmNgDQmKL.vd\",\n        \"status\": \"string\"\n      },\n      \"customer\": {\n        \"id\": 5888,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"mobileNumber\": \"string\",\n        \"mobileStatus\": \"Valid\",\n        \"email\": \"2nRuYf4xBg@VOBnGKtmJyUgtZYqEWlstLdLhtzQ.sw\"\n      }\n    },\n    {\n      \"id\": 1570,\n      \"number\": \"string\",\n      \"status\": \"string\",\n      \"repairCondition\": \"string\",\n      \"originalAmount\": 3795.989435290077,\n      \"creationDate\": 664,\n      \"updateDate\": 6641,\n      \"dealer\": {\n        \"id\": 5523,\n        \"name\": \"string\",\n        \"status\": \"string\",\n        \"phone\": \"string\",\n        \"supportNumber\": \"string\",\n        \"partner\": 2267,\n        \"distributor\": \"string\",\n        \"timeZone\": \"string\"\n      },\n      \"advisor\": {\n        \"id\": 9921,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"title\": \"string\",\n        \"mobileNumber\": \"string\",\n        \"email\": \"8JG@j.scs\",\n        \"status\": \"string\"\n      },\n      \"customer\": {\n        \"id\": 1887,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"mobileNumber\": \"string\",\n        \"mobileStatus\": \"Valid\",\n        \"email\": \"p2nRfSK@dopmELtJDtryCTYxDQMwdeiUufXUhWbqY.sur\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff3b5ced-c743-4826-81e5-f8b55110da4f",
+          "name": "Create order",
+          "request": {
+            "name": "Create order",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "repair-order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<string>\",\n  \"customerName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"customerLastName\": \"<string>\",\n  \"email\": \"<email>\",\n  \"sendNotifications\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8c34f3d-9453-46ac-936c-01bc486b6f58",
+              "name": "Created repair order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "repair-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"customerName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"customerLastName\": \"<string>\",\n  \"email\": \"<email>\",\n  \"sendNotifications\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6328,\n  \"number\": \"string\",\n  \"status\": \"string\",\n  \"repairCondition\": \"string\",\n  \"originalAmount\": 3498.715757692122,\n  \"creationDate\": 3884,\n  \"updateDate\": 2902,\n  \"dealer\": {\n    \"id\": 6404,\n    \"name\": \"string\",\n    \"status\": \"string\",\n    \"phone\": \"string\",\n    \"supportNumber\": \"string\",\n    \"partner\": 8364,\n    \"distributor\": \"string\",\n    \"timeZone\": \"string\"\n  },\n  \"advisor\": {\n    \"id\": 3206,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"title\": \"string\",\n    \"mobileNumber\": \"string\",\n    \"email\": \"KWR1Giaj@QMfICphCbIkasaQtJvQzQBCSsUaAjSJ.vb\",\n    \"status\": \"string\"\n  },\n  \"customer\": {\n    \"id\": 2503,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mobileNumber\": \"string\",\n    \"mobileStatus\": \"Valid\",\n    \"email\": \"3hPU-OzdkugAwV@Pj.uu\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "033bf4a3-5193-43ee-851e-392f1f836ce4",
+          "name": "Update order",
+          "request": {
+            "name": "Update order",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "repair-order",
+                ":repairOrderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "repairOrderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerName\": \"<string>\",\n  \"customerLastName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"email\": \"<email>\",\n  \"serviceAdvisor\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2d2566bb-cade-4770-9d74-4d82c9a538de",
+              "name": "Updated repair order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "repair-order",
+                    ":repairOrderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "repairOrderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerName\": \"<string>\",\n  \"customerLastName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"email\": \"<email>\",\n  \"serviceAdvisor\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6328,\n  \"number\": \"string\",\n  \"status\": \"string\",\n  \"repairCondition\": \"string\",\n  \"originalAmount\": 3498.715757692122,\n  \"creationDate\": 3884,\n  \"updateDate\": 2902,\n  \"dealer\": {\n    \"id\": 6404,\n    \"name\": \"string\",\n    \"status\": \"string\",\n    \"phone\": \"string\",\n    \"supportNumber\": \"string\",\n    \"partner\": 8364,\n    \"distributor\": \"string\",\n    \"timeZone\": \"string\"\n  },\n  \"advisor\": {\n    \"id\": 3206,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"title\": \"string\",\n    \"mobileNumber\": \"string\",\n    \"email\": \"KWR1Giaj@QMfICphCbIkasaQtJvQzQBCSsUaAjSJ.vb\",\n    \"status\": \"string\"\n  },\n  \"customer\": {\n    \"id\": 2503,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mobileNumber\": \"string\",\n    \"mobileStatus\": \"Valid\",\n    \"email\": \"3hPU-OzdkugAwV@Pj.uu\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb7735d0-0b52-4a4a-b3c9-300346b59f7c",
+          "name": "Search orders",
+          "request": {
+            "name": "Search orders",
+            "description": {
+              "content": "Search orders by a term compared against customer first/last name, job service number and dealer name; optionally filtered by a creation-date interval and status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "repair-order",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "searchTerm",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "creationDateFrom",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "creationDateTo",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Zero-based page number (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25",
+                  "description": "Records per page (default 25)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "012dae83-8115-4d67-aed0-4c622c44874a",
+              "name": "Paged repair orders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "repair-order",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "STATUS_NEW"
+                    },
+                    {
+                      "key": "creationDateFrom",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "creationDateTo",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalPages\": 5495,\n  \"totalElements\": 3775,\n  \"last\": false,\n  \"first\": false,\n  \"size\": 7749,\n  \"number\": 6480,\n  \"numberOfElements\": 6353,\n  \"sort\": {},\n  \"content\": [\n    {\n      \"id\": 284,\n      \"number\": \"string\",\n      \"status\": \"string\",\n      \"repairCondition\": \"string\",\n      \"originalAmount\": 7884.485571898731,\n      \"creationDate\": 2436,\n      \"updateDate\": 3218,\n      \"dealer\": {\n        \"id\": 7767,\n        \"name\": \"string\",\n        \"status\": \"string\",\n        \"phone\": \"string\",\n        \"supportNumber\": \"string\",\n        \"partner\": 462,\n        \"distributor\": \"string\",\n        \"timeZone\": \"string\"\n      },\n      \"advisor\": {\n        \"id\": 2091,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"title\": \"string\",\n        \"mobileNumber\": \"string\",\n        \"email\": \"x2ONIAoRp@OgVqsYRBmNgDQmKL.vd\",\n        \"status\": \"string\"\n      },\n      \"customer\": {\n        \"id\": 5888,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"mobileNumber\": \"string\",\n        \"mobileStatus\": \"Valid\",\n        \"email\": \"2nRuYf4xBg@VOBnGKtmJyUgtZYqEWlstLdLhtzQ.sw\"\n      }\n    },\n    {\n      \"id\": 1570,\n      \"number\": \"string\",\n      \"status\": \"string\",\n      \"repairCondition\": \"string\",\n      \"originalAmount\": 3795.989435290077,\n      \"creationDate\": 664,\n      \"updateDate\": 6641,\n      \"dealer\": {\n        \"id\": 5523,\n        \"name\": \"string\",\n        \"status\": \"string\",\n        \"phone\": \"string\",\n        \"supportNumber\": \"string\",\n        \"partner\": 2267,\n        \"distributor\": \"string\",\n        \"timeZone\": \"string\"\n      },\n      \"advisor\": {\n        \"id\": 9921,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"title\": \"string\",\n        \"mobileNumber\": \"string\",\n        \"email\": \"8JG@j.scs\",\n        \"status\": \"string\"\n      },\n      \"customer\": {\n        \"id\": 1887,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"mobileNumber\": \"string\",\n        \"mobileStatus\": \"Valid\",\n        \"email\": \"p2nRfSK@dopmELtJDtryCTYxDQMwdeiUufXUhWbqY.sur\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.truvideo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ec87681a-03ae-4195-9e8b-1b84c312cabf",
+    "name": "TruVideo Platform Authentication Repair Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo's published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.\n\nContact Support:\n Name: TruVideo Developer Team\n Email: devmgr+git@truvideo.com",
+      "type": "text/plain"
+    }
+  }
+}

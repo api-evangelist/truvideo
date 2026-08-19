@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TruVideo Platform Authentication Chat API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get chat token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/chat/authentication/:deviceId",
+            "params": [
+              {
+                "name": "deviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a custom authentication token for the device id."
+        },
+        {
+          "info": {
+            "name": "Get contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/chats/contacts",
+            "params": [
+              {
+                "name": "searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "deviceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dealerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number (default 0)."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (default 25)."
+              }
+            ]
+          },
+          "docs": "Get contacts"
+        },
+        {
+          "info": {
+            "name": "Create channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/chat/channel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create channel"
+        },
+        {
+          "info": {
+            "name": "Update channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/chat/channel/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update channel"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

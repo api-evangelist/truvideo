@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TruVideo Platform Authentication Videos API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Videos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search videos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/api/v2/:accountId/videos",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "searchTerm",
+                "value": "",
+                "type": "query",
+                "description": "Searches across Title and Description"
+              },
+              {
+                "name": "dealerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number (default 0)."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (default 25)."
+              }
+            ]
+          },
+          "docs": "Search videos"
+        },
+        {
+          "info": {
+            "name": "Create video",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.truvideo.com/api/v2/:accountId/videos",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create video"
+        },
+        {
+          "info": {
+            "name": "Get video by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.truvideo.com/api/v2/:accountId/videos/:id",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get video by id"
+        },
+        {
+          "info": {
+            "name": "Update video",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.truvideo.com/api/v2/:accountId/video/:id",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Dealer / account id. Present on all account-scoped requests."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update video"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,454 @@
+{
+  "item": [
+    {
+      "id": "9b2f8efd-8203-43b8-bf1d-ebba2e72d57a",
+      "name": "Messages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e480b9ef-4a1b-4881-a2dd-f58886f9106d",
+          "name": "Search conversations",
+          "request": {
+            "name": "Search conversations",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "messages",
+                "conversations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "orderId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "searchTerm",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Zero-based page number (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25",
+                  "description": "Records per page (default 25)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "729027da-b1e5-4911-8613-c984211bfcff",
+              "name": "Paged conversations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "messages",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "orderId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "customerId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalPages\": 7633,\n  \"totalElements\": 9985,\n  \"last\": true,\n  \"first\": true,\n  \"size\": 7453,\n  \"number\": 6201,\n  \"numberOfElements\": 9556,\n  \"sort\": {},\n  \"content\": [\n    {\n      \"id\": 4395,\n      \"accountId\": 2854,\n      \"accountName\": \"string\",\n      \"ownerId\": 6895,\n      \"ownerName\": \"string\",\n      \"orderId\": 5419,\n      \"orderDescription\": \"string\",\n      \"customerId\": 4650,\n      \"customerMobile\": \"string\",\n      \"customerName\": \"string\",\n      \"status\": \"Open\",\n      \"type\": \"REPAIR_ORDER\",\n      \"lastTextMessage\": {\n        \"id\": 5096,\n        \"direction\": \"inbound\",\n        \"sender\": \"string\",\n        \"receiver\": \"string\",\n        \"timestamp\": \"1972-09-02T09:25:15.752Z\",\n        \"message\": \"string\"\n      },\n      \"messages\": {\n        \"totalPages\": 204,\n        \"totalElements\": 3186,\n        \"last\": false,\n        \"first\": true,\n        \"size\": 8808,\n        \"number\": 6550,\n        \"numberOfElements\": 6649,\n        \"sort\": {},\n        \"content\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"direction\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sender\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"receiver\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"message\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"direction\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sender\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"receiver\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"message\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"id\": 7839,\n      \"accountId\": 8122,\n      \"accountName\": \"string\",\n      \"ownerId\": 2275,\n      \"ownerName\": \"string\",\n      \"orderId\": 2041,\n      \"orderDescription\": \"string\",\n      \"customerId\": 9141,\n      \"customerMobile\": \"string\",\n      \"customerName\": \"string\",\n      \"status\": \"Open\",\n      \"type\": \"REPAIR_ORDER\",\n      \"lastTextMessage\": {\n        \"id\": 1649,\n        \"direction\": \"outbound\",\n        \"sender\": \"string\",\n        \"receiver\": \"string\",\n        \"timestamp\": \"2013-12-27T02:41:20.404Z\",\n        \"message\": \"string\"\n      },\n      \"messages\": {\n        \"totalPages\": 9788,\n        \"totalElements\": 5774,\n        \"last\": true,\n        \"first\": false,\n        \"size\": 3158,\n        \"number\": 699,\n        \"numberOfElements\": 5042,\n        \"sort\": {},\n        \"content\": [\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"direction\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sender\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"receiver\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"message\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"direction\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sender\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"receiver\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timestamp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"message\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13ba645a-2482-4099-acd7-2f165af1482d",
+          "name": "Get messages by conversation",
+          "request": {
+            "name": "Get messages by conversation",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "messages",
+                "conversations",
+                ":conversationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Zero-based page number (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25",
+                  "description": "Records per page (default 25)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "conversationId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "14cf78cd-eb8a-4c17-81f8-42a8a980a535",
+              "name": "Conversation with paged messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "messages",
+                    "conversations",
+                    ":conversationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7172,\n  \"accountId\": 8420,\n  \"accountName\": \"string\",\n  \"ownerId\": 3362,\n  \"ownerName\": \"string\",\n  \"orderId\": 677,\n  \"orderDescription\": \"string\",\n  \"customerId\": 8296,\n  \"customerMobile\": \"string\",\n  \"customerName\": \"string\",\n  \"status\": \"Open\",\n  \"type\": \"REPAIR_ORDER\",\n  \"lastTextMessage\": {\n    \"id\": 6768,\n    \"direction\": \"outbound\",\n    \"sender\": \"string\",\n    \"receiver\": \"string\",\n    \"timestamp\": \"1993-05-12T09:14:17.370Z\",\n    \"message\": \"string\"\n  },\n  \"messages\": {\n    \"totalPages\": 461,\n    \"totalElements\": 5846,\n    \"last\": true,\n    \"first\": true,\n    \"size\": 3023,\n    \"number\": 5222,\n    \"numberOfElements\": 8211,\n    \"sort\": {},\n    \"content\": [\n      {\n        \"id\": 1795,\n        \"direction\": \"inbound\",\n        \"sender\": \"string\",\n        \"receiver\": \"string\",\n        \"timestamp\": \"1975-04-22T04:15:36.681Z\",\n        \"message\": \"string\"\n      },\n      {\n        \"id\": 7462,\n        \"direction\": \"inbound\",\n        \"sender\": \"string\",\n        \"receiver\": \"string\",\n        \"timestamp\": \"1959-07-12T06:20:54.400Z\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc3aeab1-814d-4653-8616-a2ba46f91ba7",
+          "name": "Create message for conversation",
+          "request": {
+            "name": "Create message for conversation",
+            "description": {
+              "content": "Create a new message. When conversationId is null a new conversation is started; otherwise the message is appended to the referenced conversation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                ":accountId",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "accountId",
+                  "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"<string>\",\n  \"mobile\": \"<string>\",\n  \"conversationId\": \"<long>\",\n  \"source\": \"<string>\",\n  \"sender\": \"<long>\",\n  \"order\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2c07fabb-35e3-47a8-9b92-34ca2def7215",
+              "name": "Created (Location header points to the conversation)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    ":accountId",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "accountId",
+                      "description": "(Required) Dealer / account id. Present on all account-scoped requests."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"message\": \"<string>\",\n  \"mobile\": \"<string>\",\n  \"conversationId\": \"<long>\",\n  \"source\": \"CONVERSATION\",\n  \"sender\": \"<long>\",\n  \"order\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Non-Authoritative Information (since HTTP/1.1)",
+              "code": 203,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Location",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.truvideo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "417d5afa-6b9a-4ebf-aaef-f6f60ca917cc",
+    "name": "TruVideo Platform Authentication Messages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo's published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.\n\nContact Support:\n Name: TruVideo Developer Team\n Email: devmgr+git@truvideo.com",
+      "type": "text/plain"
+    }
+  }
+}
