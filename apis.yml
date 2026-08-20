@@ -98,6 +98,8 @@ apis:
   humanURL: https://github.com/Truvideo/Documentation
   baseURL: https://app.truvideo.com
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -110,6 +112,8 @@ apis:
   humanURL: https://github.com/Truvideo/Documentation
   baseURL: https://app.truvideo.com
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -158,6 +162,8 @@ apis:
   humanURL: https://github.com/Truvideo/Documentation
   baseURL: https://app.truvideo.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
