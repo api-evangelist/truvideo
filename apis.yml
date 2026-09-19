@@ -190,6 +190,8 @@ apis:
   humanURL: https://github.com/Truvideo/Documentation
   baseURL: https://app.truvideo.com
   tags:
+  - Video
+  tags_raw:
   - Videos
   properties:
   - type: OpenAPI
