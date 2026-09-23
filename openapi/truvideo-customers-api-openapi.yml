@@ -1,8 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: TruVideo Platform Authentication Customers API
+  title: TruVideo Platform Customers API
   version: v2
-  description: 'REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo''s published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.'
+  description: 'REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers).'
   contact:
     name: TruVideo Developer Team
     email: devmgr+git@truvideo.com

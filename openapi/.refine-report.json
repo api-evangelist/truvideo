@@ -1,17 +1,7 @@
 {
   "provider": "truvideo",
   "sources": [
-    "truvideo-authentication-api-openapi.yml",
-    "truvideo-chat-api-openapi.yml",
-    "truvideo-customers-api-openapi.yml",
-    "truvideo-dealers-api-openapi.yml",
-    "truvideo-files-api-openapi.yml",
-    "truvideo-messages-api-openapi.yml",
-    "truvideo-repair-orders-api-openapi.yml",
-    "truvideo-reports-api-openapi.yml",
-    "truvideo-support-api-openapi.yml",
-    "truvideo-users-api-openapi.yml",
-    "truvideo-videos-api-openapi.yml"
+    "_original/truvideo-openapi.yml"
   ],
   "outputs": [
     "truvideo-authentication-api-openapi.yml",
@@ -29,6 +19,22 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "truvideo-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "truvideo-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-dealers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-repair-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-support-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-users-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "truvideo-videos-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,8 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: TruVideo Platform Authentication Repair Orders API
+  title: TruVideo Platform Repair Orders API
   version: v2
-  description: 'REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers). Covers authentication, users, dealers, repair orders, videos, messaging conversations, customers, files, in-app chat, reporting and support. Faithfully reconstructed from TruVideo''s published API documentation (github.com/Truvideo/Documentation); TruVideo does not publish a machine readable OpenAPI definition of its own.'
+  description: 'REST API for the TruVideo omnichannel video-and-messaging platform for service businesses (built for the automotive service market: dealers, service advisors, technicians, repair orders and customers).'
   contact:
     name: TruVideo Developer Team
     email: devmgr+git@truvideo.com
@@ -198,25 +198,32 @@ paths:
                       items:
                         $ref: '#/components/schemas/RepairOrder'
 components:
+  parameters:
+    page:
+      name: page
+      in: query
+      required: false
+      description: Zero-based page number (default 0).
+      schema:
+        type: integer
+        default: 0
+    size:
+      name: size
+      in: query
+      required: false
+      description: Records per page (default 25).
+      schema:
+        type: integer
+        default: 25
+    accountId:
+      name: accountId
+      in: path
+      required: true
+      description: Dealer / account id. Present on all account-scoped requests.
+      schema:
+        type: integer
+        format: int64
   schemas:
-    Customer:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        firstName:
-          type: string
-        lastName:
-          type: string
-        mobileNumber:
-          type: string
-        mobileStatus:
-          type: string
-          example: Valid
-        email:
-          type: string
-          format: email
     Dealer:
       type: object
       properties:
@@ -234,8 +241,9 @@ components:
         partner:
           type: integer
         distributor:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         timeZone:
           type: string
     Advisor:
@@ -245,19 +253,22 @@ components:
           type: integer
           format: int64
         firstName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         lastName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         title:
           type: string
         mobileNumber:
           type: string
         email:
-          type: string
+          type:
+          - string
+          - 'null'
           format: email
-          nullable: true
         status:
           type: string
     Page:
@@ -279,8 +290,27 @@ components:
         numberOfElements:
           type: integer
         sort:
-          type: object
-          nullable: true
+          type:
+          - object
+          - 'null'
+    Customer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstName:
+          type: string
+        lastName:
+          type: string
+        mobileNumber:
+          type: string
+        mobileStatus:
+          type: string
+          example: Valid
+        email:
+          type: string
+          format: email
     RepairOrder:
       type: object
       properties:
@@ -292,11 +322,13 @@ components:
         status:
           type: string
         repairCondition:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         originalAmount:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
         creationDate:
           type: integer
           format: int64
@@ -311,31 +343,6 @@ components:
           $ref: '#/components/schemas/Advisor'
         customer:
           $ref: '#/components/schemas/Customer'
-  parameters:
-    size:
-      name: size
-      in: query
-      required: false
-      description: Records per page (default 25).
-      schema:
-        type: integer
-        default: 25
-    page:
-      name: page
-      in: query
-      required: false
-      description: Zero-based page number (default 0).
-      schema:
-        type: integer
-        default: 0
-    accountId:
-      name: accountId
-      in: path
-      required: true
-      description: Dealer / account id. Present on all account-scoped requests.
-      schema:
-        type: integer
-        format: int64
   securitySchemes:
     bearerAuth:
       type: http
