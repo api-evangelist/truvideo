@@ -54,14 +54,6 @@ components:
       schema:
         type: integer
         default: 0
-    size:
-      name: size
-      in: query
-      required: false
-      description: Records per page (default 25).
-      schema:
-        type: integer
-        default: 25
     accountId:
       name: accountId
       in: path
@@ -70,6 +62,14 @@ components:
       schema:
         type: integer
         format: int64
+    size:
+      name: size
+      in: query
+      required: false
+      description: Records per page (default 25).
+      schema:
+        type: integer
+        default: 25
   schemas:
     Page:
       type: object
