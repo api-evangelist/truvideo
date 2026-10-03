@@ -151,6 +151,16 @@ paths:
                 format: binary
 components:
   schemas:
+    EntityFile:
+      type: object
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FileMetadata'
+        position:
+          type: integer
+        properties:
+          type: object
+          additionalProperties: true
     FileMetadata:
       type: object
       properties:
@@ -166,16 +176,6 @@ components:
           type: integer
         contentType:
           type: string
-    EntityFile:
-      type: object
-      properties:
-        metadata:
-          $ref: '#/components/schemas/FileMetadata'
-        position:
-          type: integer
-        properties:
-          type: object
-          additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http

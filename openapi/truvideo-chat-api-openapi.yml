@@ -162,6 +162,20 @@ components:
             timestamp:
               type: integer
               format: int64
+    ChannelInput:
+      type: object
+      properties:
+        channelInfo:
+          type: object
+          properties:
+            name:
+              type: string
+            admin:
+              type: string
+        member:
+          type: array
+          items:
+            type: string
     Page:
       type: object
       description: Spring-style pagination envelope wrapping a content array.
@@ -184,20 +198,6 @@ components:
           type:
           - object
           - 'null'
-    ChannelInput:
-      type: object
-      properties:
-        channelInfo:
-          type: object
-          properties:
-            name:
-              type: string
-            admin:
-              type: string
-        member:
-          type: array
-          items:
-            type: string
   parameters:
     page:
       name: page
