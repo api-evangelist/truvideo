@@ -199,24 +199,6 @@ paths:
                         $ref: '#/components/schemas/RepairOrder'
 components:
   schemas:
-    Customer:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        firstName:
-          type: string
-        lastName:
-          type: string
-        mobileNumber:
-          type: string
-        mobileStatus:
-          type: string
-          example: Valid
-        email:
-          type: string
-          format: email
     Dealer:
       type: object
       properties:
@@ -239,6 +221,46 @@ components:
           - 'null'
         timeZone:
           type: string
+    Customer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstName:
+          type: string
+        lastName:
+          type: string
+        mobileNumber:
+          type: string
+        mobileStatus:
+          type: string
+          example: Valid
+        email:
+          type: string
+          format: email
+    Page:
+      type: object
+      description: Spring-style pagination envelope wrapping a content array.
+      properties:
+        totalPages:
+          type: integer
+        totalElements:
+          type: integer
+        last:
+          type: boolean
+        first:
+          type: boolean
+        size:
+          type: integer
+        number:
+          type: integer
+        numberOfElements:
+          type: integer
+        sort:
+          type:
+          - object
+          - 'null'
     RepairOrder:
       type: object
       properties:
@@ -296,29 +318,15 @@ components:
           format: email
         status:
           type: string
-    Page:
-      type: object
-      description: Spring-style pagination envelope wrapping a content array.
-      properties:
-        totalPages:
-          type: integer
-        totalElements:
-          type: integer
-        last:
-          type: boolean
-        first:
-          type: boolean
-        size:
-          type: integer
-        number:
-          type: integer
-        numberOfElements:
-          type: integer
-        sort:
-          type:
-          - object
-          - 'null'
   parameters:
+    size:
+      name: size
+      in: query
+      required: false
+      description: Records per page (default 25).
+      schema:
+        type: integer
+        default: 25
     accountId:
       name: accountId
       in: path
@@ -335,14 +343,6 @@ components:
       schema:
         type: integer
         default: 0
-    size:
-      name: size
-      in: query
-      required: false
-      description: Records per page (default 25).
-      schema:
-        type: integer
-        default: 25
   securitySchemes:
     bearerAuth:
       type: http
